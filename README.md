@@ -62,6 +62,7 @@ httpd.serve_forever()
 
 ## OUTPUT:
 WELCOME
+"C:\Users\admin\Pictures\Screenshots\21224220098 SHIVASRI.png"
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
