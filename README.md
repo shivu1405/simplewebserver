@@ -36,11 +36,12 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
-from http.server import HTTPServer, BaseHTTPRequestHandler
-content = """
-<!DOCTYPE html>
+from http.server import HTTPServer,BaseHTTPRequestHandler
+
+content='''
+<!doctype html>
 <html>
-<body bgcolor="PURPLE">
+    <body bgcolor="PURPLE">
         <table border="5" cellpadding="22" aling="center" bgcolor="cyan">
             <caption aling="center">LAPTOP CONFIGURATION </caption>
         
@@ -68,22 +69,25 @@ content = """
         
             
         </table>
-</body>
+
+
+    </body>
+        
+    
 </html>
-"""
-class myhandler(BaseHTTPRequestHandler):
+'''
+
+class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
-        print("request received")
-        self.send_response(200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
+        print("Get request received...")
+        self.send_response(200) 
+        self.send_header("content-type", "text/html")       
         self.end_headers()
         self.wfile.write(content.encode())
-server_address = ('',80)
-httpd = HTTPServer(server_address,myhandler)
 
-
-
-print("my webserver is running...")
+print("This is my webserver") 
+server_address =('',8000)
+httpd = HTTPServer(server_address,MyServer)
 httpd.serve_forever()
 
 
