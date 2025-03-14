@@ -88,8 +88,8 @@ print("my webserver is running...")
 httpd.serve_forever()
 ```
 ## OUTPUT:
-![alt text](<../Screenshot 2025-03-14 101330.png>)
 
+![alt text](<snmp/Screenshot 2025-03-14 101330.png>)
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
